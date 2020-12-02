@@ -6,9 +6,9 @@ class ExtOrganize:
     def extension(self, Dir_PATH, File_extension, ALL_FILES):
         for FILES in ALL_FILES:
             file_path = Path(FILES)
-            REMOVIND_DOT = file_path.suffix.lower()
-            REMOVIND_DOT = REMOVIND_DOT[1::]
-            File_extension.append(REMOVIND_DOT)
+            REMOVE_POINT = file_path.suffix.lower()
+            REMOVE_POINT = REMOVE_POINT[1::]
+            File_extension.append(REMOVE_POINT)
 
     def directoryCreation(self, File_extension, Dir_PATH):
         for D in File_extension:

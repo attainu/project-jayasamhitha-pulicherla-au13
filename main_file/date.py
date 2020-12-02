@@ -3,24 +3,24 @@ import datetime
 from pathlib import Path
 
 
-class Timeandate:
+class Date:
     def folderCreation(self, date_folder, Dir_PATH):
         for dates in date_folder:
             if dates == 0:
-                FOLDER_NAME = "File created From day-0 to day-9"
+                WRAPPER_NAME = "day-0 to day-9"
             elif dates == 10:
-                FOLDER_NAME = "File created From day-10 to day-19"
+                WRAPPER_NAME = "day-10 to day-19"
             elif dates == 20:
-                FOLDER_NAME = "File created From day-20 to day-29"
+                WRAPPER_NAME = "day-20 to day-29"
             elif dates == 30:
-                FOLDER_NAME = "File created From day-30 to day-39"
+                WRAPPER_NAME = "day-30 to day-39"
             elif dates == 40:
-                FOLDER_NAME = "File created From day-40 to day-59"
+                WRAPPER_NAME = "day-40 to day-59"
             elif dates == 60:
-                FOLDER_NAME = "File created From day-60 to day-89"
+                WRAPPER_NAME = "day-60 to day-89"
             else:
-                FOLDER_NAME = "File created From day-90 and onwards"
-            directories_path = os.path.join(Dir_PATH, FOLDER_NAME)
+                WRAPPER_NAME = "From day-90"
+            directories_path = os.path.join(Dir_PATH, WRAPPER_NAME)
             directories_path = Path(directories_path)
             directories_path.mkdir(exist_ok=True)
 
@@ -49,32 +49,32 @@ class Timeandate:
             if(isFile):
                 continue
             if days >= 0 and days <= 9:
-                FOLDER_NAME = "File created From day-0 to day-9"
-                new_path = os.path.join(Dir_PATH, FOLDER_NAME, file)
+                WRAPPER_NAME = "day-0 to day-9"
+                new_path = os.path.join(Dir_PATH, WRAPPER_NAME, file)
                 os.rename(old_path, new_path)
             elif days >= 10 and days <= 19:
-                FOLDER_NAME = "File created From day-10 to day-19"
-                new_path = os.path.join(Dir_PATH, FOLDER_NAME, file)
+                WRAPPER_NAME = "day-10 to day-19"
+                new_path = os.path.join(Dir_PATH, WRAPPER_NAME, file)
                 os.rename(old_path, new_path)
             elif days >= 20 and days <= 29:
-                FOLDER_NAME = "File created From day-20 to day-29"
-                new_path = os.path.join(Dir_PATH, FOLDER_NAME, file)
+                WRAPPER_NAME = "day-20 to day-29"
+                new_path = os.path.join(Dir_PATH, WRAPPER_NAME, file)
                 os.rename(old_path, new_path)
             elif days >= 30 and days <= 39:
-                FOLDER_NAME = "File created From day-30 to day-39"
-                new_path = os.path.join(Dir_PATH, FOLDER_NAME, file)
+                WRAPPER_NAME = "day-30 to day-39"
+                new_path = os.path.join(Dir_PATH, WRAPPER_NAME, file)
                 os.rename(old_path, new_path)
             elif days >= 40 and days <= 59:
-                FOLDER_NAME = "File created From day-40 to day-59"
-                new_path = os.path.join(Dir_PATH, FOLDER_NAME, file)
+                WRAPPER_NAME = "day-40 to day-59"
+                new_path = os.path.join(Dir_PATH, WRAPPER_NAME, file)
                 os.rename(old_path, new_path)
             elif days >= 60 and days <= 89:
-                FOLDER_NAME = "File created From day-60 to day-89"
-                new_path = os.path.join(Dir_PATH, FOLDER_NAME, file)
+                WRAPPER_NAME = "day-60 to day-89"
+                new_path = os.path.join(Dir_PATH, WRAPPER_NAME, file)
                 os.rename(old_path, new_path)
             else:
-                FOLDER_NAME = "File created From day-90 and onwards"
-                new_path = os.path.join(Dir_PATH, FOLDER_NAME, file)
+                WRAPPER_NAME = "From day-90"
+                new_path = os.path.join(Dir_PATH, WRAPPER_NAME, file)
                 os.rename(old_path, new_path)
 
     def extrafolder(self, Dir_PATH):
@@ -84,12 +84,12 @@ class Timeandate:
                 os.rmdir(folder[0])
 
 
-def DATESANDTIMES(Dir_PATH):
+def DATE(Dir_PATH):
     files = os.listdir(Dir_PATH)
     only_files = []
     date_folder = [0, 10, 20, 30, 40, 60, 90]
     mover = []
-    obj = Timeandate()
+    obj = Date()
     obj.folderCreation(date_folder, Dir_PATH)
     obj.onlyfile(files, Dir_PATH, only_files)
     obj.totaldays(only_files, Dir_PATH, mover)

@@ -1,5 +1,5 @@
 from extension import EXT
-from Timeandate import DATESANDTIMES
+from date import DATE
 from size import SIZEORGANIZER
 import os
 
@@ -13,16 +13,16 @@ class jfileOrganizer:
         EXT(v)
 
     def DATES(self, v):
-        DATESANDTIMES(v)
+        DATE(v)
 
     def SIZE(self, v):
         SIZEORGANIZER(v)
 
 
 def Dictionary(A, B):
-    d = {1: "ORGANISE BY Extension\n",
-         2: "ORGANISE BY DATE\n",
-         3: "ORGANISE BY SIZE\n"}
+    d = {1: "ORGANIZED BY Extension\n",
+         2: "ORGANIZED BY DATE\n",
+         3: "ORGANIZED BY SIZE\n"}
     if len(A) == 1 or len(A) == 0:
         return
     if not os.path.exists(A):
